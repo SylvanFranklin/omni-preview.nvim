@@ -17,6 +17,7 @@ https://github.com/user-attachments/assets/e9c0a587-0536-478d-b408-30422ac8e73b
 - [x] Latex (just by finding a corresponding pdf file, look into vimtex for more)
 - [x] Markdown
 - [x] Typst
+- [x] Env Files
 - [ ] ...More coming soon
 
 ## Install
@@ -167,6 +168,11 @@ require("omni-preview").setup({
 })
 ```
 
+- [cloak.nvim](https://github.com/laytan/cloak.nvim) cloak sensitive data
+
+```lua
+    {'laytan/cloak.nvim', lazy = true}
+```
 
 
 #### ROADMAP 🌾
