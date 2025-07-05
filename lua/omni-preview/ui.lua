@@ -58,6 +58,15 @@ M.create_float_window = function(previews, title, callback)
     -- this can be whatever function that needs to be passed in to do something
     callback(p)
   end, { buffer = buf, silent = true })
+
+    -- Number key bindings (1-9)
+  for i = 1, math.min(9, #previews) do
+    vim.keymap.set("n", tostring(i), function()
+      local preview = previews[i]
+      M.close_float(buf, float)
+      callback(preview)
+    end, { buffer = buf, silent = true })
+  end
 end
 
 return M
