@@ -3,8 +3,18 @@ local M = {}
 
 M.system_open = function()
   local filename = vim.fn.expand "%:p"
-  local success = os.execute("open " .. vim.fn.shellescape(filename))
-  if not success then print('Could not use system command "open" to open ' .. filename) end
+
+  local cmd
+  if vim.fn.has "mac" == 1 then
+    cmd = "open "
+  elseif vim.fn.has "win32" == 1 then
+    cmd = "explorer.exe "
+  else
+    cmd = "xdg-open "
+  end
+
+  local success = os.execute(cmd .. vim.fn.shellescape(filename))
+  if not success then print('Could not use system command "' .. cmd .. '" to open ' .. filename) end
 end
 
 M.build_config = function()
