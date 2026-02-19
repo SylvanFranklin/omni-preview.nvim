@@ -114,8 +114,8 @@ M.previews = {
   {
     name = "markview",
     trig = "markdown",
-    start = "Markview",
-    stop = "",
+    start = "Markview enable",
+    stop = "Markview disable",
   },
   {
     name = "render-markdown",
